@@ -60,12 +60,15 @@
   </body>
 
   <script>
-      let choice = document.querySelector("div");
+      let choices = document.querySelector("div");
       
-      choice.forEach(function(div){
+      choices.forEach(function(choice){
           choice.addEventListener("click", function(){
-              choice.style.backgroundcolor = 'skyblue';
-              choice.parentElement.style.backgroundcolor = 'pink';
+            choices.forEach(function(c){
+              c.style.backgroundColor = 'white';
+            });
+              choice.style.backgroundColor = 'skyblue';
+              choice.parentElement.style.backgroundColor = 'pink';
                event.stopPropagation();
                 console.log("선택된 디브");
                 })
