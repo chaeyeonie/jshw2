@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>댕댕<span id = "image"></span></p>
+    <input type="button" id="execute" value="execute"/>
+    <script type="text/javascript">
+    document.querySelector('input').addEventListener('click', function(event)
+    {
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', 'https://images.dog.ceo/breeds/springer-english/n02102040_6566.jpg');
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState === 4 && xhr.satus === 200){
+            document.querySelector('#image').innerHTML="img src=\"https://images.dog.ceo/breeds/springer-english/n02102040_6566.jpg";
+        }
+    }
+
+    xhr.send();
+    })
+ </script>   
+</body>
+</html>
